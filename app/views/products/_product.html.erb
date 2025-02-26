@@ -1,0 +1,14 @@
+<div id="<%= dom_id product %>" class="my-5 space-y-5">
+  <div>
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= product.description %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Image:</strong>
+    <%= link_to product.image.filename, product.image, class: "text-gray-700 underline hover:no-underline" if product.image.attached? %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Price:</strong>
+    <%= product.price %>
+  </div>
+</div>
