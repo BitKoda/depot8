@@ -1,7 +1,7 @@
 require "test_helper"
 
 class ProductTest < ActiveSupport::TestCase
-  fixtures :products 
+  fixtures :products
 
   test "product attributes must not be empty" do
     product = Product.new
@@ -18,20 +18,20 @@ class ProductTest < ActiveSupport::TestCase
       description: "yyy"
     )
     product.image.attach(
-      io: File.open("test/fixtures/files/lorem.jpg"), 
-      filename: "lorem.jpg", 
+      io: File.open("test/fixtures/files/lorem.jpg"),
+      filename: "lorem.jpg",
       content_type: "image/jpeg"
     )
     product.price = -1
     assert product.invalid?
     assert_equal [ "must be greater than or equal to 0.01" ],
     product.errors[:price]
-    
+
     product.price = 0
     assert product.invalid?
     assert_equal [ "must be greater than or equal to 0.01" ],
     product.errors[:price]
-    
+
     product.price = 1
     assert product.valid?
   end
@@ -42,48 +42,48 @@ class ProductTest < ActiveSupport::TestCase
       description: "yyy",
       price: 1
     )
-    
+
     product.image.attach(
-      io: File.open("test/fixtures/files/lorem.jpg"), 
-      filename: "lorem.jpg", 
+      io: File.open("test/fixtures/files/lorem.jpg"),
+      filename: "lorem.jpg",
       content_type: "image/jpeg"
     )
   end
 
-  test "image url" do 
+  test "image url" do
     product = Product.new(
       title: "My Book Title",
       description: "yyy",
-      price: 1 
+      price: 1
     )
     product.image.attach(
-      io: File.open("test/fixtures/files/lorem.jpg"), 
-      filename: "lorem.jpg", 
+      io: File.open("test/fixtures/files/lorem.jpg"),
+      filename: "lorem.jpg",
       content_type: "image/jpeg"
     )
     assert product.valid?, "image/jpeg must be valid"
-    
+
     product = Product.new(
       title: "My Book Title",
       description: "yyy",
-      price: 1 
+      price: 1
     )
     product.image.attach(
-      io: File.open("test/fixtures/files/logo.svg"), 
-      filename: "logo.svg", 
+      io: File.open("test/fixtures/files/logo.svg"),
+      filename: "logo.svg",
       content_type: "image/svg+xml"
     )
     assert_not product.valid?, "image/svg+xml must be invalid"
   end
-  
+
   test "product is not valid without a unique title" do
     product = Product.new(title: products(:pragprog).title,
                           description: "yyy",
-                          price:1
+                          price: 1
                          )
     product.image.attach(
-      io: File.open("test/fixtures/files/lorem.jpg"), 
-      filename: "lorem.jpg", 
+      io: File.open("test/fixtures/files/lorem.jpg"),
+      filename: "lorem.jpg",
       content_type: "image/jpeg"
     )
     assert product.invalid?

@@ -7,6 +7,7 @@
 # Visit https://pragprog.com/titles/rails8 for more book information.
 #---
 # encoding: utf-8
+
 Product.delete_all
 product = Product.create(title: 'Programming Ruby 3.3 (5th Edition)',
   description:
