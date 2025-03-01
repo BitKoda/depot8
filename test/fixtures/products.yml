@@ -1,5 +1,15 @@
+hotwire:
+  title: Hotwire Native for Rails Developers
+  description: Create intuitive and maintainable mobile apps powered by the technology you already know, Ruby on Rails. 
+  price: 30.99
+
 pragprog:
   title: The Pragmatic Programmer
   description: Your Journey to Mastery 20th Anniversary Edition (2nd Edition)
   price: 39.99
-  #  image: attachments(:one)
+
+agile:
+  title: Agile Web Development with Rails 8
+  description: Ruby on Rails helps you produce high-quality, beautiful-looking web applications quickly.
+  price: 39.95
+

@@ -1,14 +1,14 @@
-one:
+hotwire:
   name: image
-  record: one (Product)
-  blob: blob_one
-
-two:
-  name: image
-  record: two (Product)
-  blob: blob_two
+  record: hotwire (Product)
+  blob: blob_hotwire
 
 pragprog:
   name: image
   record: pragprog (Product)
   blob: blob_pragprog
+
+agile:
+  name: image
+  record: agile (Product)
+  blob: blob_agile
