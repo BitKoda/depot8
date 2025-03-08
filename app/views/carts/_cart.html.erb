@@ -1,17 +1,6 @@
 <div id="<%= dom_id cart %>">
   <table class="table-auto my-5">
-    <% cart.line_items.each do |line_item| %>
-      <tr>
-        <td class="text-right"><%= line_item.quantity %></td>
-        <td>&times;</td>
-        <td class="pr-2">
-          <%= line_item.product.title %>
-        </td>
-        <td class="text-right px-2">
-          <%= number_to_currency(line_item.total_price) %>
-        </td>
-      </tr>
-    <% end %>
+    <%= render cart.line_items %>
     <tfoot>
       <tr>
         <th class="text-right pr-2 pt-2 py-2" colspan="3">Total:</th>
